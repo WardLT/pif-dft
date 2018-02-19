@@ -81,9 +81,7 @@ class DFTParser(object):
             'Spin-Orbit Coupling':'uses_SOC',
             'DFT+U':'get_U_settings',
             'vdW Interactions':'get_vdW_settings',
-            'Pseudopotentials':'get_pp_name',
-            'INCAR':'get_incar',
-            'POSCAR':'get_poscar',
+            'Pseudopotentials':'get_pp_name'
         }
         
     def get_result_functions(self):
@@ -104,7 +102,6 @@ class DFTParser(object):
             'Forces': 'get_forces',
             'Total force': 'get_total_force',
             'Density': 'get_density',
-            'OUTCAR': 'get_outcar',
             'Total magnetization': 'get_total_magnetization',
             'Stresses': 'get_stresses'
         }

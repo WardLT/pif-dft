@@ -41,6 +41,21 @@ class VaspParser(DFTParser):
         self.eignval = _find_file('EIGNVAL')
 
     def get_name(self): return "VASP"
+
+    def get_setting_functions(self):
+        settings = super(VaspParser, self).get_setting_functions()
+        settings.update({
+            'INCAR': 'get_incar',
+            'POSCAR': 'get_poscar',
+        })
+        return settings
+
+    def get_result_functions(self):
+        outputs = super(VaspParser, self).get_result_functions()
+        outputs.update({
+            'OUTCAR': 'get_outcar',
+        })
+        return outputs
         
     def get_output_structure(self):
         self.atoms = read_vasp_out(self.outcar)
